@@ -1,0 +1,50 @@
+package com.techlabs.tressure;
+
+import java.util.Scanner;
+
+public class TressureIslandGame {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("*****Welcome o Tressue Island*****");
+		System.out.println("Your mission is to find a Tressure.");
+		
+		System.out.println("Select any one: ");
+		System.out.println("Left or Right");
+		String direction = scanner.next();
+		
+		if(direction.contains("left") || direction.contains("Left")) {
+			System.out.println("Select any one: ");
+			System.out.println("Swim or Wait");
+			String answer = scanner.next();
+			if(answer.contains("Wait") || answer.contains("wait")) {
+				System.out.println("Which Door you want to choose: ");
+				System.out.println("Red | Yellow | Blue");
+				String color = scanner.next();
+				
+				if(color.contains("Red") || color.contains("red")) {
+					System.out.println("Burned by Fire");
+					System.out.println("****Game Over*****");
+				}else if(color.contains("Blue") || color.contains("blue")) {
+					System.out.println("Eaten by Beasts");
+					System.out.println("****Game Over*****");
+				}else if(color.contains("Yellow") || color.contains("yellow")) {
+					System.out.println("Congratulations!! You Won the Game");
+					System.out.println("****Game Over*****");
+				}else {
+					System.out.println("You lose");
+					System.out.println("****Game Over****");
+				}
+			}else {
+				System.out.println("Attacked by trout");
+				System.out.println("****Game Over****");
+			}
+		}else {
+			System.out.println("You Fall into Hole");
+			System.out.println("*****GAME OVER*****");
+		}
+
+	}
+
+}
