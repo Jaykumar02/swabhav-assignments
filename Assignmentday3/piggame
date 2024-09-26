@@ -1,1 +1,80 @@
+package com.assignments.pig;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class PlayingPigGame {
+
+	public static void main(String[] args) {
+		Random rand = new Random();
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.println("****Lets Play Pig*****");
+		System.out.println("Enter Hold or Roll as per your convience");
+		String playAgain = "Y";
+		while(playAgain.equalsIgnoreCase("Y")) {
+		int totalscore = 0;
+		int die = 0;
+		int turn = 1;
+		
+		while(totalscore<20) {
+			int turnscore = 0;
+			System.out.println("Turn "+turn);
+			
+			while(true) {
+			System.out.println("Roll or Hold (r/h)");
+			String choice = scanner.next();
+			
+			if(choice.equalsIgnoreCase("r")) {
+				die = rand.nextInt(6)+1;
+				System.out.println("Die: "+die);
+				turnscore += die;
+				
+				
+				
+			
+			if(die==1) {
+				turnscore = 0;
+				
+				System.out.println("Turn Over, Game Over!!");
+				break;
+			} else {
+				
+				
+				if(totalscore +turnscore>=20) {
+					totalscore += turnscore;
+//					 System.out.println("Current turn score: " + turnscore);
+                     System.out.println("Total score: " + totalscore);
+                     System.out.println("You won in " + turn + " turns! Game over.");
+                     break;  
+				}
+				System.out.println("Current turn score: " + turnscore);
+			}
+			}else if(choice.equalsIgnoreCase("h")){
+				totalscore += turnscore;
+                System.out.println("Score for turn: " + turnscore);
+                System.out.println("Total score: " + totalscore);
+                break;  
+				
+			}
+			} // while true
+			
+			if(totalscore>20) {
+				break;
+			}
+			
+			turn++;
+			
+			
+		} //while
+		
+		System.out.println("Do You want to play again (Y/N): ");
+		playAgain = scanner.next();
+
+		}
+		
+		System.out.println("Thank You for Playing Game!!");
+	}
+
+}
 
