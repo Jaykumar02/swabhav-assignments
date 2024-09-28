@@ -1,0 +1,56 @@
+package com.techlabs.twentyeight;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class NumberGusserGame {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		Random rand = new Random();
+
+		System.out.println("****Number Guesser Game****");
+		System.out.println("Random Number will be Generated ");
+		System.out.println("You need to Guess the Number in  5 Turns ");
+
+		boolean play = true;
+		while (play) {
+			int turn = 1;
+			int number = rand.nextInt(100) + 1;
+			for (int i = 1; i <= 5; i++) {
+				System.out.println("Turn : " + turn);
+				System.out.println("Guess the Random Number: ");
+				int num = scanner.nextInt();
+				if (num < number) {
+					System.out.println("Two Low!!!!");
+				} else if (num > number) {
+					System.out.println("Too High!!!");
+				} else if (num == number) {
+					System.out.println("Congrats you Guessed it right");
+					System.out.println("The Number was " + number);
+					System.out.println("****You Win*****");
+					break;
+				}
+
+				if (i == 5) {
+					System.out.println("Sorry your turns is Over: ");
+					System.out.println("The Number was " + number);
+					System.out.println("****You Loose*****");
+					break;
+				}
+				turn++;
+			}
+			System.out.println("Do you want to Play again (Y/N)");
+			String ans = scanner.next();
+			if (ans.equalsIgnoreCase("Y")) {
+
+			} else {
+				play = false;
+				System.out.println("Thank You for Playing the Game");
+			}
+
+		}
+
+	}
+
+}
