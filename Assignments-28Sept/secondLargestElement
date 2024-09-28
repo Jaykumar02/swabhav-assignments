@@ -1,13 +1,28 @@
 package com.techlabs.twentyeight;
 
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class SecondLargestElement {
 
 	public static void main(String[] args) {
-		
-		int[] arr = {12, 20, 45, 30, 60};
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter The Length of an Array: ");
+		int length = scanner.nextInt();
+		int[] arr;
+		arr = new int[length];
 		
 		int largest = Integer.MIN_VALUE;
 		int seclargest = Integer.MIN_VALUE;
+		
+		System.out.println("Enter the Elements of an Array");
+		for(int i=0;i<arr.length;i++) {
+			arr[i] = scanner.nextInt();
+		}
+		
+		System.out.println("Your array is: "+Arrays.toString(arr));
+		
+		
 		
 		for(int i=0;i<arr.length;i++) {
 			if(arr[i]>largest) {
