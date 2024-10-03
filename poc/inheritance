@@ -1,0 +1,54 @@
+package com.techlabs.inheritance;
+
+
+class Animal {
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+
+
+class Mammal extends Animal {
+    void walk() {
+        System.out.println("Mammal is walking");
+    }
+}
+
+
+class Dog extends Mammal {
+    void bark() {
+        System.out.println("Dog is barking");
+    }
+}
+
+class Cat extends Animal {
+    void meow() {
+        System.out.println("Cat is meowing");
+    }
+}
+public class Inheritance {
+	public static void main(String[] args) {
+		Animal animal = new Animal();
+		Mammal mammal = new Mammal();
+		Dog dog = new Dog();
+		Cat cat = new Cat();
+		
+		System.out.println("Example of Single Inheritance");
+		dog.eat();   
+	    dog.bark();
+	    System.out.println("*********************************");
+	    
+	    System.out.println("Example of MultiLevel Inheritance");
+	    dog.eat();   
+        dog.walk();  
+        dog.bark(); 
+        
+        System.out.println("*********************************");
+        
+        System.out.println("Example of Hirarchical Inheritance");
+        cat.eat();  
+        cat.meow(); 
+
+	}
+
+}
