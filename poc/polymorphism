@@ -1,0 +1,63 @@
+package com.techlabs.oop;
+
+class Animal{
+	
+	void sound() {
+		System.out.println("Animal makes Sound");
+	}
+	
+//	Example of Method Overloading
+	void sleep() {
+		System.out.println("Animal is Sleeping");
+	}
+	
+	void sleep(int hours) {
+		System.out.println("Animal is sleeping for "+hours+" hours.");
+	}
+}
+class Dog extends Animal{
+	
+	void sound() {
+		System.out.println("Dog is Barking");
+	}
+	
+	void sleep() {
+		System.out.println("Dog is Sleeping");
+	}
+}
+
+class Cat extends Animal{
+	
+	void sound() {
+		System.out.println("Cat Meows");
+	}
+}
+public class Polymorphism {
+	public static void main(String[] args) {
+		
+		/*
+		 * Method Overloading :
+		 * Class having 2 methods of same name with different parameters
+		 * 
+		 * Method Overriding :
+		 * 2 different classes have methods of same name*/
+		
+		
+		Animal animal = new Animal();
+		Animal dog = new Dog();
+		Cat cat = new Cat();
+		
+		System.out.println("Example of Method Overloading");
+		animal.sound();
+		dog.sound();
+		cat.sound();
+		System.out.println("**************************************");
+		System.out.println("Example of Method Overriding");
+		animal.sleep();
+		animal.sleep(3);
+		dog.sleep();
+		
+
+	}
+
+}
