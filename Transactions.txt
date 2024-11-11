@@ -1,2 +1,0 @@
-Transaction Details:
-Transaction ID, Transaction type, Quantity, Date,
