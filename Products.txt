@@ -1,0 +1,9 @@
+Product Details:
+Product ID, Product Name, Product Description, Product Quantity, Product Price
+1339 , wert , wsdefg , 100 , 2345.0
+*******************************************************************************Supplier Details:
+Supplier ID, Supplier Name, Supplier Contact Info
+686 , wert , sdfg
+*******************************************************************************Transaction Details:
+Transaction ID, Transaction type, Quantity, Date,
+69 , Added Stock , 95 , 234 , 
